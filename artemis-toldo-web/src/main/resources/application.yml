@@ -1,0 +1,38 @@
+
+spring:
+    profiles:
+      active: dev
+    datasource:
+        driver-class-name: com.mysql.jdbc.Driver
+        password: 111111
+        url: jdbc:mysql://localhost:3306/artemis?characterEncoding=utf8&useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC
+        username: root
+    freemarker:
+        allow-request-override: false
+        cache: true
+        charset: UTF-8
+        check-template-location: true
+        content-type: text/html
+        expose-request-attributes: false
+        expose-session-attributes: false
+        expose-spring-macro-helpers: false
+        suffix: .ftl
+        template-loader-path: classpath:/ftl/
+    mvc:
+        static-path-pattern: /static/**
+    resources:
+        static-locations: classpath:/static/
+
+
+mybatis:
+    mapper-locations: classpath:com/dxy/artemis/toldo/dao/mapper/*.xml
+    type-aliases-package: com.dxy.artemis.toldo.dao.pojo
+
+server:
+  port: 8082
+
+seimi:
+  crawler:
+    enabled: true
+    names: basic
+
